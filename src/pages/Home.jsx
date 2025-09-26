@@ -14,7 +14,7 @@ import {
   FaLayerGroup,
 } from "react-icons/fa";
 
-function HomePage() {
+function Home() {
   const navigate = useNavigate();
 
   // --- State ---
@@ -750,4 +750,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;
