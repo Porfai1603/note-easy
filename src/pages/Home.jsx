@@ -53,15 +53,18 @@ function Home() {
   });
   const [categories, setCategories] = useState([]);
 
-  // --- Effects ---
+  // คำนวณหมวดหมู่ที่ไม่ซ้ำกัน
   useEffect(() => {
     const uniqueCategories = [...new Set(notes.map((n) => n.category))];
     setCategories(uniqueCategories);
   }, [notes]);
 
+  //ถ้าเปลี่ยนแท็บหรือค้นหา จะรีเซ็ตหน้าเป็นหน้า 1
   useEffect(() => {
     setCurrentPage(1);
   }, [activeTab, search]);
+
+  //อัปเดตผู้สร้างโน้ตใหม่
   useEffect(() => {
     setNewNote((prev) => ({ ...prev, author: username }));
   }, [username]);
